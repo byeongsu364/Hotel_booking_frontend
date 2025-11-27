@@ -1,7 +1,7 @@
 /* -------------------------------
    Frame 117  →  section.container
 -------------------------------- */
-.container {
+.destinations-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
     width: 100%;
     max-width: 1440px;
     margin: 100px auto 0;  /* top: 886px → margin-top으로 변환 */
-
+    margin-bottom: 100px;
     box-sizing: border-box;
 }
 

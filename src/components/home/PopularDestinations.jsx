@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 
 import "../../styles/components/home/PopularDestinations.scss";
 import { mockDestinations } from "../../api/mockData";
+import DestinationCard from "./DestinationCard"; // ✅ 추가
 
 const PopularDestinations = () => {
     return (
@@ -17,7 +18,6 @@ const PopularDestinations = () => {
                         <h2>여행에 빠지다</h2>
                         <p>특가상품으로 진행하는 여행을 예약해보세요</p>
                     </div>
-
                     <button className="btn--primary">See All</button>
                 </div>
 
@@ -35,27 +35,10 @@ const PopularDestinations = () => {
                     }}
                     className="destinations-swiper"
                 >
-                    {mockDestinations.map((item) => (
+                    {mockDestinations.map((destination) => (
                         <SwiperSlide key={destination.id}>
-                            <div
-                                className="destination-card"
-                                style={{
-                                    backgroundImage: `url(${destination.image})`,
-                                }}
-                            >
-                                <div className="card-overlay">
-                                    <div className="name-price">
-                                        <h3>{destination.name}</h3>
-                                        <span>₩{destination.price.toLocaleString()}</span>
-                                    </div>
-
-                                    <p className="desc">{destination.description}</p>
-
-                                    <button className="book-btn">Book a Hotel</button>
-                                </div>
-                            </div>
+                            <DestinationCard destination={destination} />
                         </SwiperSlide>
-
                     ))}
                 </Swiper>
             </div>
@@ -63,4 +46,4 @@ const PopularDestinations = () => {
     );
 };
 
-export default PopularDestinations
+export default PopularDestinations;
