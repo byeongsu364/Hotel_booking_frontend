@@ -22,8 +22,7 @@ const SearchFilterWrap = () => {
                 <div className="search-item">
                     <label>Check In</label>
                     <div className="input-box">
-                        <input type="date" defaultValue="2024-12-02" />
-                        <span className="icon">📅</span>
+                        <input type="date" defaultValue="2025-12-02" />
                     </div>
                 </div>
 
@@ -31,8 +30,7 @@ const SearchFilterWrap = () => {
                 <div className="search-item">
                     <label>Check Out</label>
                     <div className="input-box">
-                        <input type="date" defaultValue="2024-12-04" />
-                        <span className="icon">📅</span>
+                        <input type="date" defaultValue="2025-12-04" />
                     </div>
                 </div>
 

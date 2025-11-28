@@ -1,17 +1,20 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import LoginPage from "./pages/auth/LoginPage";
 import SignupPage from "./pages/auth/SignupPage";
 import FindPasswordPage from "./pages/auth/FindPasswordPage";
 import EmailAuth from "./pages/auth/EmailAuth";
-import ResetPasswordPage from "./pages/auth/ResetPasswordPage";   // 🔥 추가
+import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 import HomePage from "./pages/home/HomePage";
 import SearchLayout from "./components/layouts/SearchLayout";
+import SearchPage from "./pages/search/SearchPage";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
 function App() {
+  const location = useLocation();  // ← 현재 URL 가져오기
+
   return (
     <>
       <Header />

@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../common/Header";
 import SearchFilterWrap from "../search/SearchFilterWrap";
 import FilterSidebar from "../search/FilterSidebar";
+import './styles/SearchLayout.scss';
 
 const SearchLayout = () => {
     const [filters, setFilters] = useState({
@@ -25,15 +26,37 @@ const SearchLayout = () => {
 
     return (
         <div className="search-layout">
+
+            {/* 헤더 */}
             <Header />
+
             <div className="search-container">
-                <SearchFilterWrap filters={filters} onFilterChange={handleFilterChange} />
-                <div className="search-content inner">
-                    <FilterSidebar filters={filters} onFilterChange={handleFilterChange} />
+
+                {/* 🔍 검색바 영역 */}
+                <div className="search-top-bar">
+                    <SearchFilterWrap 
+                        filters={filters} 
+                        onFilterChange={handleFilterChange} 
+                    />
+                </div>
+
+                <div className="search-content">
+
+                    {/* 🧭 왼쪽 필터 사이드바 */}
+                    <aside className="search-sidebar">
+                        <FilterSidebar 
+                            filters={filters} 
+                            onFilterChange={handleFilterChange} 
+                        />
+                    </aside>
+
+                    {/* 🏨 오른쪽 메인 (탭 + 정렬 + 호텔 리스트) */}
                     <main className="search-main">
                         <Outlet context={{ filters }} />
                     </main>
+
                 </div>
+
             </div>
         </div>
     );
