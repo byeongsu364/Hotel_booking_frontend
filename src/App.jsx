@@ -9,6 +9,7 @@ import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 import HomePage from "./pages/home/HomePage";
 import SearchLayout from "./components/layouts/SearchLayout";
 import SearchPage from "./pages/search/SearchPage";
+import HotelDetailPage from "./pages/hotel/HotelDetailPage";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/search" element={<SearchLayout />}>
           <Route index element={<SearchPage />} />
         </Route>
+        <Route path="/hotels/:hotelId" element={<HotelDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
 

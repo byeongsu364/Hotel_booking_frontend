@@ -99,6 +99,7 @@ const HotelListCards = ({ hotels = [] }) => {
                     </div>
                 );
             })}
+            <button className="load-more">Show more results</button>
         </div>
     );
 };
