@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaStar, FaMapMarkerAlt, FaHeart, FaShare } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "../../styles/components/hotelpage/HotelDetailHeader.scss";
 
 const HotelDetailHeader = ({ hotel }) => {
     if (!hotel) {
         return <div className="hotel-detail-header loading">Loading...</div>;
     }
+    const navigate = useNavigate();
 
     const {
         name = "호텔명 없음",
@@ -30,6 +32,15 @@ const HotelDetailHeader = ({ hotel }) => {
             );
         }
         return stars;
+    };
+
+    const handleBookNow = () => {
+        const params = new URLSearchParams();
+        if (startDate) params.append("checkIn", startDate.toISOString());
+        if (endDate) params.append("checkOut", endDate.toISOString());
+        params.append("guests", guests);
+
+        navigate(`/booking/${hotel._id || hotel.id}?${params.toString()}`);
     };
 
     return (
@@ -82,7 +93,7 @@ const HotelDetailHeader = ({ hotel }) => {
                             <FaShare />
                         </button>
 
-                        <button className="book-top-btn">
+                        <button className="book-top-btn" onClick={handleBookNow}>
                             Book now
                         </button>
                     </div>
