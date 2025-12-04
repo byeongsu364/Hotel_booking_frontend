@@ -122,3 +122,27 @@
         padding: 16px 14px 20px;
     }
 }
+.back-to-help-btn {
+    padding: 8px 14px;
+    background: whi;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        border: 1px solid #98c9b8;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+    }
+}
+
+/* 헤더 정렬 */
+.inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}

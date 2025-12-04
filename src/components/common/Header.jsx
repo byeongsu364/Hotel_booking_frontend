@@ -60,34 +60,37 @@ const Header = () => {
                             </div>
 
                             {/* 🔹 드롭다운 메뉴 표시 */}
+                            {/* 🔹 드롭다운 메뉴 표시 */}
                             {openMenu && (
                                 <div className="profile-menu">
-                                    <div className="user-menu">
-                                        <div className="user-info">
-                                            <div className="avatar">T</div>
+                                    <div className="user-menu-layout">
+
+                                        {/* ◀ 왼쪽: 유저 정보 */}
+                                        <div className="left-info">
+                                            <div className="avatar">{user.nickname?.[0]?.toUpperCase()}</div>
                                             <div className="user-details">
                                                 <span className="username">{user.nickname}</span>
                                                 <span className="status">Online</span>
                                             </div>
                                         </div>
-                                        <div className="menu-items">
+
+                                        {/* ▶ 오른쪽: 메뉴 리스트 */}
+                                        <div className="right-menu">
                                             <Link className="item" to="/mypage/account">계정</Link>
-                                            <Link className="item" to="/mypage/payment">결제내역</Link>
+                                            <Link className="item" to="/mypage/bookings/:bookingId">결제내역</Link>
                                             <Link className="item" to="/mypage/settings">설정</Link>
-
-                                            <div className="divider"></div>
-
-                                            {/* 🔹 로그아웃 버튼 */}
-                                            <button
-                                                className="item logout"
-                                                onClick={handleLogout}
-                                            >
-                                                로그아웃
-                                            </button>
                                         </div>
                                     </div>
+
+                                    <div className="divider"></div>
+
+                                    {/* 🔹 로그아웃 버튼 */}
+                                    <button className="item logout" onClick={handleLogout}>
+                                        로그아웃
+                                    </button>
                                 </div>
                             )}
+
                         </div>
                     </>
                 )}
